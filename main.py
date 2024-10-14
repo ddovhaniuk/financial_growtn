@@ -1,6 +1,5 @@
 import math
 from prettytable import PrettyTable
-import matplotlib.pyplot as plt
 
 # Функція для обчислення складного відсотка
 def calculate_compound_interest(principal, rate, time, n):
@@ -29,15 +28,3 @@ print(table)
 
 # Виводимо загальну накопичену суму
 print(f"\nКінцева сума після {time} років: {final_amount:.2f}")
-
-# Створюємо графік зростання інвестиції та зберігаємо його у файл
-years = list(range(1, time + 1))
-plt.plot(years, yearly_amounts, marker='o')
-plt.title("Зростання інвестиції за роками")
-plt.xlabel("Роки")
-plt.ylabel("Накопичена сума")
-plt.grid(True)
-
-# Зберігаємо графік у файл
-plt.savefig('investment_growth.png')
-print("\nГрафік зростання інвестиції збережено у файл 'investment_growth.png'.")

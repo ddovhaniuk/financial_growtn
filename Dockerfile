@@ -1,11 +1,11 @@
-FROM python:3-alpine3.4
+FROM python:3.8-slim
 
 WORKDIR /usr/src/app
 
 COPY . .
 
-RUN pip install --no-cache-dir math
-RUN pip install --no-cache-dir matplotlib.pyplot
-RUN pip install --no-cache-dir prettytable
+RUN pip install --upgrade pip
+RUN pip install prettytable
+
 
 CMD ["python", "./main.py"]
